@@ -1,0 +1,17 @@
+# Airflow em modo "standalone": simples e suficiente para portfólio/estudo.
+# Em produção usaríamos CeleryExecutor/KubernetesExecutor + banco Postgres.
+services:
+  airflow:
+    image: apache/airflow:2.10.5-python3.11
+    command: standalone
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      _PIP_ADDITIONAL_REQUIREMENTS: "duckdb>=1.1,<2 pandas>=2.2,<3 pyarrow>=16 requests>=2.31"
+      PYTHONPATH: /opt/airflow/src
+      DATA_DIR: /opt/airflow/data
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
