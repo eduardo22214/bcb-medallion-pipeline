@@ -1,4 +1,4 @@
-# 🏦 Lakehouse de Indicadores Econômicos do Brasil
+# BCB Medallion Pipeline: Brazilian Economic Indicators
 
 Pipeline de dados com **arquitetura medalhão (Bronze → Silver → Gold)**, orquestrado com **Apache Airflow**, que consome a API pública do **Banco Central do Brasil (SGS)** e entrega uma tabela analítica mensal com dólar, Selic e IPCA.
 
