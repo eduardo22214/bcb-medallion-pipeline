@@ -1,5 +1,3 @@
-# Airflow em modo "standalone": simples e suficiente para portfólio/estudo.
-# Em produção usaríamos CeleryExecutor/KubernetesExecutor + banco Postgres.
 services:
   airflow:
     image: apache/airflow:2.10.5-python3.11
